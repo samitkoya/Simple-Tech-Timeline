@@ -5,6 +5,7 @@ An interactive timeline showcasing the history of technology from 1957 to 2020. 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![React](https://img.shields.io/badge/React-18.3-61dafb.svg)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.3-3178c6.svg)
+![Vite](https://img.shields.io/badge/Vite-5.2-646cff.svg)
 
 ## 🚀 Features
 
@@ -19,30 +20,45 @@ An interactive timeline showcasing the history of technology from 1957 to 2020. 
 ```
 Simple-Tech-Timeline/
 ├── src/
-│   ├── components/    # React components
-│   │   ├── Header.tsx
-│   │   ├── Timeline.tsx
-│   │   ├── EventModal.tsx
+│   ├── components/         # React UI components
 │   │   ├── EventMarker.tsx
-│   │   └── FilterPanel.tsx
-│   ├── hooks/         # Custom React hooks
-│   │   └── useTheme.ts
-│   ├── data/          # JSON data files
+│   │   ├── EventModal.tsx
+│   │   ├── FilterPanel.tsx
+│   │   ├── Header.tsx
+│   │   └── Timeline.tsx
+│   ├── data/               # JSON data files
 │   │   └── events.json
-│   ├── styles/        # CSS stylesheets
+│   ├── hooks/              # Custom React hooks
+│   │   └── useTheme.ts
+│   ├── styles/             # CSS stylesheets
 │   │   └── styles.css
-│   ├── utils/         # Utility functions
-│   ├── App.tsx        # Main app component
-│   ├── main.tsx       # Entry point
-│   └── types.ts       # TypeScript types
-├── public/            # Static assets
-├── docs/              # Documentation
+│   ├── utils/              # Utility functions
+│   │   ├── fetcher.ts
+│   │   ├── index.ts
+│   │   ├── modal.ts
+│   │   ├── renderer.ts
+│   │   └── theme.ts
+│   ├── App.tsx             # Main app component
+│   ├── main.tsx            # Entry point
+│   └── types.ts            # TypeScript type definitions
+├── public/                 # Static assets
+│   └── first.jpg
+├── docs/                   # Documentation
 │   └── accessibility.md
-├── legacy/            # Legacy JavaScript files
-├── index.html         # HTML entry point
-├── package.json
-├── tsconfig.json
-└── vite.config.ts
+├── legacy/                 # Legacy JavaScript files (deprecated)
+│   ├── fetcher.js
+│   ├── index.js
+│   ├── modal.js
+│   ├── renderer.js
+│   ├── script.js
+│   ├── theme.js
+│   └── types.js
+├── node_modules/           # Installed dependencies (auto-generated)
+├── index.html              # HTML entry point
+├── package.json            # Project dependencies & scripts
+├── tsconfig.json           # TypeScript configuration
+├── vite.config.ts          # Vite configuration
+└── LICENSE                 # MIT License
 ```
 
 ## 🛠️ Prerequisites
@@ -62,6 +78,26 @@ Simple-Tech-Timeline/
    ```bash
    npm install
    ```
+
+## 📋 Dependencies
+
+### Production Dependencies
+
+| Package | Version | Description |
+|---------|---------|-------------|
+| [react](https://react.dev/) | ^18.3.1 | UI Library |
+| [react-dom](https://react.dev/) | ^18.3.1 | React DOM rendering |
+| [framer-motion](https://www.framer.com/motion/) | ^11.18.2 | Animation library |
+
+### Development Dependencies
+
+| Package | Version | Description |
+|---------|---------|-------------|
+| [typescript](https://www.typescriptlang.org/) | ^5.3.3 | Type safety |
+| [vite](https://vitejs.dev/) | ^5.2.0 | Build tool & dev server |
+| [@vitejs/plugin-react](https://vitejs.dev/) | ^4.2.0 | React plugin for Vite |
+| [@types/react](https://www.npmjs.com/package/@types/react) | ^18.3.1 | React type definitions |
+| [@types/react-dom](https://www.npmjs.com/package/@types/react-dom) | ^18.3.1 | React DOM type definitions |
 
 ## ▶️ Running the App
 
@@ -91,29 +127,8 @@ Preview the production build locally:
 npm run preview
 ```
 
-## 🧪 Tech Stack
-
-| Technology | Purpose |
-|------------|---------|
-| [React 18](https://react.dev/) | UI Library |
-| [TypeScript](https://www.typescriptlang.org/) | Type Safety |
-| [Vite](https://vitejs.dev/) | Build Tool & Dev Server |
-| [Framer Motion](https://www.framer.com/motion/) | Animations |
-
 ## 📖 Usage
 
 1. Use the timeline slider or click on year labels to navigate through events
 2. Click "Learn More" or an event card to view detailed information
 3. Toggle the theme button to switch between light and dark modes
-
-## 📜 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to submit a Pull Request.
-
----
-
-*Built with ❤️ and React*
